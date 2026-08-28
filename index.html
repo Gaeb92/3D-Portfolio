@@ -1,16 +1,253 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Portfolio</title>
+
+    <title>3D Studio | 3D Printing & Modeling</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 7%;
+            background:
+                radial-gradient(circle at 70% 50%, #252525 0%, #0b0b0b 45%);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: clamp(50px, 7vw, 95px);
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            background: #ddd;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 120px 7%;
+            background: #111;
+        }
+
+        .section-title {
+            font-size: 45px;
+            margin-bottom: 60px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            padding: 50px;
+            background: #1a1a1a;
+            border: 1px solid #292929;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 120px 7%;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <h1>3D Printing & 3D Modeling</h1>
+    <!-- NAVIGATION -->
 
-    <p>Resin 3D printing and Blender projects.</p>
+    <nav>
+
+        <div class="logo">
+            3D STUDIO
+        </div>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">3D Printing</a></li>
+            <li><a href="#">Blender</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                3D PRINTING<br>
+                & MODELING
+            </h1>
+
+            <p>
+                High-quality resin 3D printing and digital 3D modeling.
+                From physical miniatures to digital creations.
+            </p>
+
+            <a href="#portfolio" class="button">
+                VIEW PORTFOLIO
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <h2 class="section-title">
+            WHAT I DO
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>3D Printing</h3>
+
+                <p>
+                    Detailed resin 3D printing for figures,
+                    miniatures and custom projects.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>3D Modeling</h3>
+
+                <p>
+                    Blender-based 3D modeling and digital
+                    sculpting. More projects coming soon.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
+
 </html>
