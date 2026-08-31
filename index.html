@@ -156,11 +156,14 @@
             gap: 30px;
         }
 
-        .card {
-            padding: 50px;
-            background: #1a1a1a;
-            border: 1px solid #292929;
-            transition: 0.3s;
+  .card {
+    padding: 50px;
+    background: #1a1a1a;
+    border: 1px solid #292929;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+    display: block;
         }
 
         .card:hover {
@@ -177,7 +180,15 @@
             color: #999;
             line-height: 1.7;
         }
+.card span {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
 
+    }
         /* MOBILE */
 
        @media (max-width: 700px) {
@@ -286,28 +297,32 @@
 
         <div class="cards">
 
-            <div class="card">
+            <a href="#printing" class="card">
 
-                <h3>3D Printing</h3>
+    <h3>3D Printing</h3>
 
-                <p>
-                    Detailed resin 3D printing for figures,
-                    miniatures and custom projects.
-                </p>
+    <p>
+        Detailed resin 3D printing for figures,
+        miniatures and custom projects.
+    </p>
 
-            </div>
+    <span>EXPLORE →</span>
+
+</a>
 
 
-            <div class="card">
+           <a href="#modeling" class="card">
 
-                <h3>3D Modeling</h3>
+    <h3>3D Modeling</h3>
 
-                <p>
-                    Blender-based 3D modeling and digital
-                    sculpting. More projects coming soon.
-                </p>
+    <p>
+        Blender-based 3D modeling and digital
+        sculpting. More projects coming soon.
+    </p>
 
-            </div>
+    <span>EXPLORE →</span>
+
+</a>
 
         </div>
 
