@@ -204,15 +204,99 @@
     overflow: hidden;
 }
 
-.project-image img {
+.before-after {
+    position: relative;
     width: 100%;
     height: 600px;
+    overflow: hidden;
+}
+}
+
+.before-after > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
     padding: 30px;
-    transition: 0.4s;
 }
 
+.before-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.before-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 30px;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 5;
+}
+
+.slider-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: white;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #111;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 4;
+}
+
+.slider-button::before,
+.slider-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.slider-button::before {
+    left: 10px;
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.slider-button::after {
+    right: 10px;
+    transform: translateY(-50%) rotate(45deg);
+}
 .project-image:hover img {
     transform: scale(1.03);
 }
@@ -518,11 +602,37 @@
 
     <div class="project">
 
-        <div class="project-image">
+       <div class="project-image">
 
-            <img src="images/Refpic.png" alt="Resin printed figure">
+    <div class="before-after">
+
+        <img
+            src="images/tower-finished.png"
+            alt="Finished Tower">
+
+        <div class="before-image">
+
+            <img
+                src="images/tower-printing.png"
+                alt="Tower during printing">
 
         </div>
+
+        <div class="slider-line"></div>
+
+        <div class="slider-button"></div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            class="slider"
+            aria-label="Before and after comparison">
+
+    </div>
+
+</div>
 
         <div class="project-info">
 
@@ -617,7 +727,24 @@
        </div>
 
    </section>
+<script>
 
+    const slider = document.querySelector(".slider");
+    const beforeImage = document.querySelector(".before-image");
+    const sliderLine = document.querySelector(".slider-line");
+    const sliderButton = document.querySelector(".slider-button");
+
+    slider.addEventListener("input", function () {
+
+        const value = this.value;
+
+        beforeImage.style.width = value + "%";
+        sliderLine.style.left = value + "%";
+        sliderButton.style.left = value + "%";
+
+    });
+
+</script>
 
    </body>
 
