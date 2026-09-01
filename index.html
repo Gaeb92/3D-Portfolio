@@ -182,64 +182,86 @@
         }
         /* PORTFOLIO */
 
+/* PORTFOLIO */
+
 .portfolio {
     padding: 120px 7%;
     background: #0b0b0b;
 }
 
-.portfolio-grid {
+.project {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 70px;
+    align-items: center;
 }
 
-.portfolio-item {
-    background: #151515;
+.project-image {
+    background: #111;
     border: 1px solid #292929;
     overflow: hidden;
-    transition: 0.3s;
 }
 
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    border-color: #555;
-}
-.portfolio-item:hover img {
-    transform: scale(1.03);
-    }
-.portfolio-item img {
+.project-image img {
     width: 100%;
-    height: 500px;
+    height: 600px;
     object-fit: contain;
     display: block;
-    background: #111;
     padding: 30px;
     transition: 0.4s;
 }
 
-.portfolio-info {
-    padding: 25px 30px 30px;
+.project-image:hover img {
+    transform: scale(1.03);
 }
 
-.portfolio-info h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.project-info {
+    max-width: 450px;
 }
 
-.portfolio-info p {
-    color: #999;
-    line-height: 1.6;
-}
-
-.portfolio-placeholder {
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #111;
-    color: #555;
-    font-size: 14px;
+.project-category {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: bold;
     letter-spacing: 2px;
+    color: #888;
+}
+
+.project-info h3 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.project-info p {
+    color: #999;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.project-details strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.project-details span {
+    color: #888;
+    font-size: 15px;
 }
 .card span {
     display: inline-block;
@@ -336,14 +358,22 @@
     .cards {
            grid-template-columns: 1fr;
        }
+           .project {
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
 
-       .portfolio-grid {
-           grid-template-columns: 1fr;
-       }
+.project-image img {
+    height: 400px;
+}
 
-       .portfolio-item img,
-       .portfolio-placeholder {
-           height: 350px;
+.project-info {
+    max-width: 100%;
+}
+
+.project-info h3 {
+    font-size: 36px;
+}
        }
 
        .printing-features {
@@ -455,7 +485,7 @@
 
     </section>
 
-    <!-- PORTFOLIO -->
+   <!-- PORTFOLIO -->
 
 <section class="portfolio" id="portfolio">
 
@@ -463,104 +493,48 @@
         SELECTED WORK
     </h2>
 
-    <div class="portfolio-grid">
+    <div class="project">
 
-    <div class="portfolio-item">
+        <div class="project-image">
 
-        <img src="images/Refpic.png" alt="Resin printed figure">
+            <img src="images/Refpic.png" alt="Resin printed figure">
 
-        <div class="portfolio-info">
+        </div>
 
-            <h3>Resin Figure</h3>
+        <div class="project-info">
+
+            <span class="project-category">
+                3D PRINTING
+            </span>
+
+            <h3>
+                Resin Figure
+            </h3>
 
             <p>
-                High-detail resin 3D print.
+                High-detail resin 3D printed figure,
+                produced with precision and attention to detail.
             </p>
 
-        </div>
+            <div class="project-details">
 
-    </div>
+                <div>
+                    <strong>Technology</strong>
+                    <span>Resin 3D Printing</span>
+                </div>
 
-
-    <div class="portfolio-item">
-
-        <img src="images/Refpic2.png" alt="Resin printed figure">
-
-        <div class="portfolio-info">
-
-            <h3>Resin Figure #2</h3>
-
-            <p>
-                Detailed resin 3D printed model.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="portfolio-item">
-
-        <img src="images/Troll_test.PNG" alt="Resin printed troll figure">
-
-        <div class="portfolio-info">
-
-            <h3>Troll</h3>
-
-            <p>
-                Resin 3D printed test figure.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="portfolio-item">
-
-        <div class="portfolio-placeholder">
-
-            <span>COMING SOON</span>
-
-        </div>
-
-        <div class="portfolio-info">
-
-            <h3>Blender Project</h3>
-
-            <p>
-                3D modeling and digital sculpting.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-        <div class="portfolio-item">
-
-            <div class="portfolio-placeholder">
-
-                <span>COMING SOON</span>
-
-            </div>
-
-            <div class="portfolio-info">
-
-                <h3>Blender Project</h3>
-
-                <p>
-                    3D modeling and digital sculpting.
-                </p>
+                <div>
+                    <strong>Layer Height</strong>
+                    <span>0.05 mm</span>
+                </div>
 
             </div>
 
         </div>
 
-           </div>
+    </div>
 
-   </section>
+</section>
 
 
    <!-- 3D PRINTING -->
