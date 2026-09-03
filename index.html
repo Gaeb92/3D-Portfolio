@@ -215,8 +215,8 @@
 .project-slider img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 30px;
+    object-fit: cover;
+    padding: 0;
     display: block;
     transition: opacity 0.25s ease;
 }
@@ -689,8 +689,8 @@
 <script>
 
    const slides = [
-        "images/Towerinprocc.png",
-        "images/Tower.png"
+        "images/Towerinprocc.PNG",
+        "images/Tower.PNG"
     ];
 
     let currentSlide = 0;
@@ -698,35 +698,51 @@
     const slideImage = document.getElementById("project-slide");
     const slideNumber = document.getElementById("slide-number");
 
-    document.querySelector(".slide-next").addEventListener("click", function () {
+    const prevButton = document.querySelector(".slide-prev");
+    const nextButton = document.querySelector(".slide-next");
 
-        currentSlide++;
 
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
+    function updateSlide() {
 
         slideImage.src = slides[currentSlide];
 
         slideNumber.textContent =
             String(currentSlide + 1).padStart(2, "0");
 
-    });
+        if (currentSlide === 0) {
 
-    document.querySelector(".slide-prev").addEventListener("click", function () {
+            prevButton.style.display = "none";
+            nextButton.style.display = "block";
 
-        currentSlide--;
+        } else {
 
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
+            prevButton.style.display = "block";
+            nextButton.style.display = "none";
+
         }
 
-        slideImage.src = slides[currentSlide];
+    }
 
-        slideNumber.textContent =
-            String(currentSlide + 1).padStart(2, "0");
+
+    nextButton.addEventListener("click", function () {
+
+        currentSlide = 1;
+
+        updateSlide();
 
     });
+
+
+    prevButton.addEventListener("click", function () {
+
+        currentSlide = 0;
+
+        updateSlide();
+
+    });
+
+
+    updateSlide();
 
 
 </script>
