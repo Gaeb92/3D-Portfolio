@@ -204,98 +204,65 @@
     overflow: hidden;
 }
 
-.before-after {
+.project-slider {
     position: relative;
     width: 100%;
     height: 600px;
-    overflow: hidden;
-}
-
-.before-after > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    padding: 30px;
-}
-
-.before-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.before-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 30px;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: ew-resize;
-    z-index: 5;
-}
-
-.slider-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background: white;
-    transform: translateX(-50%);
-    pointer-events: none;
-    z-index: 3;
-}
-
-.slider-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    border: 2px solid white;
-    border-radius: 50%;
     background: #111;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 4;
+    overflow: hidden;
 }
 
-.slider-button::before,
-.slider-button::after {
-    content: "";
+.project-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 30px;
+    display: block;
+    transition: opacity 0.25s ease;
+}
+
+.slide-prev,
+.slide-next {
     position: absolute;
     top: 50%;
-    width: 8px;
-    height: 8px;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: 1px solid #555;
+    border-radius: 50%;
+    background: rgba(10, 10, 10, 0.8);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.slider-button::before {
-    left: 10px;
-    transform: translateY(-50%) rotate(-135deg);
+.slide-prev {
+    left: 20px;
 }
 
-.slider-button::after {
-    right: 10px;
-    transform: translateY(-50%) rotate(45deg);
+.slide-next {
+    right: 20px;
 }
+
+.slide-prev:hover,
+.slide-next:hover {
+    background: #222;
+}
+
+.slide-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 14px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #333;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #aaa;
+}
+
 .project-image:hover img {
     transform: scale(1.03);
 }
@@ -601,34 +568,28 @@
     <div class="project">
 
        <div class="project-image">
+<div class="project-slider">
 
-    <div class="before-after">
+    <img
+        id="project-slide"
+        src="images/Towerinprocc.png"
+        alt="Tower during printing"
+    >
 
-        <img
-            src="images/Tower.png"
-            alt="Finished Tower">
+    <button class="slide-prev" aria-label="Previous image">
+        &#10094;
+    </button>
 
-        <div class="before-image">
+    <button class="slide-next" aria-label="Next image">
+        &#10095;
+    </button>
 
-            <img
-                src="images/Towerinprocc.png"
-                alt="Tower during printing">
-
-        </div>
-
-        <div class="slider-line"></div>
-
-        <div class="slider-button"></div>
-
-        <input
-            type="range"
-            min="0"
-            max="100"
-            value="50"
-            class="slider"
-            aria-label="Before and after comparison">
-
+    <div class="slide-counter">
+        <span id="slide-number">01</span> / 02
     </div>
+
+</div>
+    
 
 </div>
 
@@ -727,20 +688,46 @@
    </section>
 <script>
 
-    const slider = document.querySelector(".slider");
-    const beforeImage = document.querySelector(".before-image");
-    const sliderLine = document.querySelector(".slider-line");
-    const sliderButton = document.querySelector(".slider-button");
+   const slides = [
+        "images/Towerinprocc.PNG",
+        "images/Tower.PNG"
+    ];
 
-    slider.addEventListener("input", function () {
+    let currentSlide = 0;
 
-        const value = this.value;
+    const slideImage = document.getElementById("project-slide");
+    const slideNumber = document.getElementById("slide-number");
 
-        beforeImage.style.width = value + "%";
-        sliderLine.style.left = value + "%";
-        sliderButton.style.left = value + "%";
+    document.querySelector(".slide-next").addEventListener("click", function () {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        slideImage.src = slides[currentSlide];
+
+        slideNumber.textContent =
+            String(currentSlide + 1).padStart(2, "0");
 
     });
+
+    document.querySelector(".slide-prev").addEventListener("click", function () {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        slideImage.src = slides[currentSlide];
+
+        slideNumber.textContent =
+            String(currentSlide + 1).padStart(2, "0");
+
+    });
+
 
 </script>
 
