@@ -92,8 +92,33 @@ box-shadow: 0 2px 20px rgba(80, 255, 0, 0.12);
             font-size: 15px;
         }
 
-        nav a:hover {
-            color: #aaa;
+        nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #8cff00;
+    box-shadow: 0 0 8px rgba(140, 255, 0, 0.7);
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+nav a:hover {
+    color: #8cff00;
+}
+
+nav a:hover::after {
+    width: 100%;
         }
         /* HERO */
 
