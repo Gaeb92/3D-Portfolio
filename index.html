@@ -144,25 +144,23 @@ nav a:hover::after {
     position: relative;
 }
 .hero-image::before {
-
     content: "";
-
     position: absolute;
+    width: 520px;
+    height: 520px;
 
-    width: 450px;
-
-    height: 450px;
-
-    background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.12) 0%,
-        rgba(255, 255, 255, 0) 70%
-    );
+    background:
+        radial-gradient(
+            circle,
+            rgba(140, 255, 0, 0.28) 0%,
+            rgba(80, 220, 0, 0.16) 30%,
+            rgba(40, 150, 0, 0.08) 50%,
+            rgba(0, 0, 0, 0) 72%
+        );
 
     border-radius: 50%;
-
     z-index: 0;
-
+    filter: blur(18px);
 }
 .hero-image img {
     max-width: 520px;
