@@ -1,1 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | GAEB 3D STUDIO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        nav {
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: #0b0b0b;
+            border-bottom: 1px solid rgba(120, 255, 0, 0.35);
+            box-shadow: 0 2px 20px rgba(80, 255, 0, 0.12);
+        }
+
+        nav .logo {
+            display: inline-block;
+            padding: 8px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #8cff00;
+            border: 1px solid #8cff00;
+            border-radius: 5px;
+
+            text-shadow:
+                0 0 5px #8cff00,
+                0 0 12px rgba(140, 255, 0, 0.7),
+                0 0 25px rgba(140, 255, 0, 0.4);
+
+            box-shadow:
+                0 0 5px rgba(140, 255, 0, 0.9),
+                0 0 15px rgba(140, 255, 0, 0.6),
+                inset 0 0 10px rgba(140, 255, 0, 0.15);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.25s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #8cff00;
+            box-shadow: 0 0 8px rgba(140, 255, 0, 0.7);
+            transform: translateX(-50%);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #8cff00;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .portfolio {
+            padding: 150px 7% 120px;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 60px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            display: block;
+            border: 1px solid #8cff00;
+            overflow: hidden;
+            background: #111;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            box-shadow:
+                0 0 10px rgba(140, 255, 0, 0.5),
+                0 0 30px rgba(140, 255, 0, 0.2);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 15px 30px;
+            background: #0b0b0b;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid #8cff00;
+
+            box-shadow:
+                0 0 8px rgba(140, 255, 0, 0.7),
+                0 0 20px rgba(140, 255, 0, 0.25);
+
+            transition: all 0.25s ease;
+        }
+
+        .back-button:hover {
+            background: #8cff00;
+            color: #0b0b0b;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 12px 3%;
+            }
+
+            nav ul {
+                gap: 12px;
+                justify-content: center;
+                width: 100%;
+            }
+
+            nav ul a {
+                font-size: 11px;
+            }
+
+            .portfolio {
+                padding: 130px 7% 80px;
+            }
+
+            .section-title {
+                font-size: 36px;
+                margin-bottom: 35px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            GAEB 3D STUDIO
+        </div>
+
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#printing">3D Printing</a></li>
+            <li><a href="#">Blender</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <section class="portfolio">
+
+        <h1 class="section-title">
+            PORTFOLIO
+        </h1>
+
+
+        <div class="gallery">
+
+            <a href="images/Arthas.png" class="gallery-item">
+                <img src="images/Arthas.png" alt="Arthas">
+            </a>
+
+            <a href="images/Ironman2.jpg" class="gallery-item">
+                <img src="images/Ironman2.jpg" alt="Iron Man">
+            </a>
+
+            <a href="images/Angel.jpg" class="gallery-item">
+                <img src="images/Angel.jpg" alt="Angel">
+            </a>
+
+            <a href="images/Troll_test.PNG" class="gallery-item">
+                <img src="images/Troll_test.PNG" alt="Troll">
+            </a>
+
+            <a href="images/mammut2.png" class="gallery-item">
+                <img src="images/mammut2.png" alt="Mammut">
+            </a>
+
+            <a href="images/pala.png" class="gallery-item">
+                <img src="images/pala.png" alt="Pala">
+            </a>
+
+            <a href="images/Venom2.png" class="gallery-item">
+                <img src="images/Venom2.png" alt="Venom">
+            </a>
+
+            <a href="images/stand.png" class="gallery-item">
+                <img src="images/stand.png" alt="Stand">
+            </a>
+
+            <a href="images/wv.png" class="gallery-item">
+                <img src="images/wv.png" alt="WV">
+            </a>
+
+            <a href="images/csonti.png" class="gallery-item">
+                <img src="images/csonti.png" alt="Csonti">
+            </a>
+
+        </div>
+
+
+        <a href="index.html#portfolio" class="back-button">
+            ← BACK TO HOME
+        </a>
+
+    </section>
+
+</body>
+
+</html>
