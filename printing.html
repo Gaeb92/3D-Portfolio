@@ -219,6 +219,41 @@
     font-size: 14px;
     line-height: 1.6;
 }
+        .printing-card {
+    min-height: 280px;
+    background: #111;
+    border: 1px solid #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.printing-card:hover {
+    border-color: #8cff00;
+    box-shadow:
+        0 0 10px rgba(140, 255, 0, 0.35),
+        0 0 30px rgba(140, 255, 0, 0.12);
+}
+
+.printing-card-content span {
+    color: #8cff00;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.printing-card-content h2 {
+    margin: 15px 0;
+    font-size: 32px;
+}
+
+.printing-card-content p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
         
 
         @media (max-width: 700px) {
@@ -315,9 +350,9 @@
 
       <div class="blender-projects">
 
-    <div class="blender-card coming-card">
+    <div class="printing-card">
 
-        <div class="coming-card-content">
+        <div class="printing-card-content">
 
             <span>TECHNOLOGY</span>
 
@@ -332,9 +367,9 @@
 
     </div>
 
-    <div class="blender-card coming-card">
+    <div class="printing-card">
 
-        <div class="coming-card-content">
+        <div class="printing-card-content">
 
             <span>MATERIALS</span>
 
