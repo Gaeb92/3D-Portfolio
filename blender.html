@@ -136,6 +136,47 @@
             color: #888;
             line-height: 1.7;
         }
+        .blender-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.blender-card {
+    min-height: 280px;
+    background: #111;
+    border: 1px solid #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.blender-card:hover {
+    border-color: #8cff00;
+    box-shadow:
+        0 0 10px rgba(140, 255, 0, 0.35),
+        0 0 30px rgba(140, 255, 0, 0.12);
+}
+
+.coming-card-content span {
+    color: #8cff00;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.coming-card-content h2 {
+    margin: 15px 0;
+    font-size: 32px;
+}
+
+.coming-card-content p {
+    color: #777;
+    font-size: 14px;
+}
 
         @media (max-width: 700px) {
 
