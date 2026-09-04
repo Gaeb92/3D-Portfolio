@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blender | GAEB 3D STUDIO</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        nav {
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: #0b0b0b;
+            border-bottom: 1px solid rgba(120, 255, 0, 0.35);
+            box-shadow: 0 2px 20px rgba(80, 255, 0, 0.12);
+        }
+
+        nav .logo {
+            display: inline-block;
+            padding: 8px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #8cff00;
+            border: 1px solid #8cff00;
+            border-radius: 5px;
+
+            text-shadow:
+                0 0 5px #8cff00,
+                0 0 12px rgba(140, 255, 0, 0.7),
+                0 0 25px rgba(140, 255, 0, 0.4);
+
+            box-shadow:
+                0 0 5px rgba(140, 255, 0, 0.9),
+                0 0 15px rgba(140, 255, 0, 0.6),
+                inset 0 0 10px rgba(140, 255, 0, 0.15);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.25s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #8cff00;
+            box-shadow: 0 0 8px rgba(140, 255, 0, 0.7);
+            transform: translateX(-50%);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover {
+            color: #8cff00;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .blender {
+            min-height: 100vh;
+            padding: 150px 7% 120px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            letter-spacing: 6px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 80px;
+            text-align: center;
+            color: #999;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .coming-soon {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            border: 1px solid #292929;
+            background: #111;
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .coming-soon p {
+            color: #888;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 12px 3%;
+            }
+
+            nav ul {
+                gap: 12px;
+                justify-content: center;
+                width: 100%;
+            }
+
+            nav ul a {
+                font-size: 11px;
+            }
+
+            .blender {
+                padding: 130px 7% 80px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .section-intro {
+                font-size: 16px;
+                margin-bottom: 50px;
+            }
+
+            .coming-soon {
+                padding: 50px 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            GAEB 3D STUDIO
+        </div>
+
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#printing">3D Printing</a></li>
+            <li><a href="blender.html">Blender</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <section class="blender">
+
+        <h1 class="section-title">
+            BLENDER
+        </h1>
+
+        <p class="section-intro">
+            3D modeling, digital sculpting and creative work
+            created in Blender.
+        </p>
+
+        <div class="coming-soon">
+
+            <h2>
+                PROJECTS COMING SOON
+            </h2>
+
+            <p>
+                Blender projects will be added here as the portfolio develops.
+            </p>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
