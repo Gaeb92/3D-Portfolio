@@ -177,6 +177,49 @@
     color: #777;
     font-size: 14px;
 }
+        .printing-process {
+    margin-top: 80px;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.process-step {
+    padding: 30px;
+    background: #111;
+    border: 1px solid #292929;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover {
+    border-color: #8cff00;
+    box-shadow:
+        0 0 10px rgba(140, 255, 0, 0.35),
+        0 0 30px rgba(140, 255, 0, 0.12);
+}
+
+.process-step span {
+    color: #8cff00;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.process-step h3 {
+    margin: 12px 0;
+    font-size: 22px;
+}
+
+.process-step p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.6;
+}
+        
 
         @media (max-width: 700px) {
 
